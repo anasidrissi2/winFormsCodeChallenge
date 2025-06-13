@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.UI", "InventoryManagement.UI.csproj", "{3CCD6F85-052B-444A-B29F-2458295C15C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Core", "..\InventoryManagement.core\InventoryManagement.Core.csproj", "{5E89F22A-3BF9-4069-9189-71579B59F1C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagement.Core", "InventoryManagement.core\InventoryManagement.Core.csproj", "{5E89F22A-3BF9-4069-9189-71579B59F1C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

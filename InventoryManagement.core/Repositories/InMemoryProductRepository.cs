@@ -11,7 +11,7 @@ namespace InventoryManagement.core.Repositories
     public class InMemoryProductRepository : IProductRepository
     {
 
-        private readonly List<Product> _products;
+        private readonly List<Product> _products = new List<Product>();
         private int _nextId = 1;
 
         public void Add(Product product)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InventoryManagement.core.Interfaces
 {
-    internal interface IProductService
+    public interface IProductService
     {
         void AddProduct(Product product);
 
