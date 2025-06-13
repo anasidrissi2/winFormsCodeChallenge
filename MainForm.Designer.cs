@@ -30,7 +30,7 @@
         {
             this.productsListingDataGridView = new System.Windows.Forms.DataGridView();
             this.ProductsListingActionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.ProductSearchTextBox = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.addProductButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
@@ -55,7 +55,7 @@
             this.ProductsListingActionsGroupBox.Controls.Add(this.updateButton);
             this.ProductsListingActionsGroupBox.Controls.Add(this.addProductButton);
             this.ProductsListingActionsGroupBox.Controls.Add(this.SearchLabel);
-            this.ProductsListingActionsGroupBox.Controls.Add(this.searchTextBox);
+            this.ProductsListingActionsGroupBox.Controls.Add(this.ProductSearchTextBox);
             this.ProductsListingActionsGroupBox.Location = new System.Drawing.Point(12, 12);
             this.ProductsListingActionsGroupBox.Name = "ProductsListingActionsGroupBox";
             this.ProductsListingActionsGroupBox.Size = new System.Drawing.Size(1113, 71);
@@ -63,12 +63,13 @@
             this.ProductsListingActionsGroupBox.TabStop = false;
             this.ProductsListingActionsGroupBox.Text = "Product Actions";
             // 
-            // searchTextBox
+            // ProductSearchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(191, 34);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(292, 22);
-            this.searchTextBox.TabIndex = 0;
+            this.ProductSearchTextBox.Location = new System.Drawing.Point(191, 34);
+            this.ProductSearchTextBox.Name = "ProductSearchTextBox";
+            this.ProductSearchTextBox.Size = new System.Drawing.Size(292, 22);
+            this.ProductSearchTextBox.TabIndex = 0;
+            this.ProductSearchTextBox.TextChanged += new System.EventHandler(this.ProductSearchTextBox_TextChanged);
             // 
             // SearchLabel
             // 
@@ -89,9 +90,11 @@
             this.addProductButton.TabIndex = 2;
             this.addProductButton.Text = "+ Add";
             this.addProductButton.UseVisualStyleBackColor = false;
+            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
             // 
             // updateButton
             // 
+            this.updateButton.Enabled = false;
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.updateButton.Location = new System.Drawing.Point(954, 31);
             this.updateButton.Name = "updateButton";
@@ -103,6 +106,7 @@
             // deleteButton
             // 
             this.deleteButton.BackColor = System.Drawing.Color.DarkRed;
+            this.deleteButton.Enabled = false;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.deleteButton.Location = new System.Drawing.Point(1028, 31);
             this.deleteButton.Name = "deleteButton";
@@ -132,7 +136,7 @@
 
         private System.Windows.Forms.DataGridView productsListingDataGridView;
         private System.Windows.Forms.GroupBox ProductsListingActionsGroupBox;
-        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.TextBox ProductSearchTextBox;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Button addProductButton;
         private System.Windows.Forms.Button deleteButton;

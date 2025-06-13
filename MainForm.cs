@@ -24,7 +24,7 @@ namespace ForterroAnasIdrissiCodeChallenge
             _productService = productService;
             _productsBindingSource = new BindingSource();
             SetupProductsDataGridView();
-            Loadproducts();
+            LoadProducts();
 
         }
 
@@ -75,9 +75,16 @@ namespace ForterroAnasIdrissiCodeChallenge
                 HeaderText = "Stock Quantity"
             });
 
+            productsListingDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "CreatedDate",
+                HeaderText = "Creation Date"
+            });
+
+
         }
 
-        private void Loadproducts()
+        private void LoadProducts()
         {
             var products = _productService.GetAllProducts().ToList();
 
@@ -88,5 +95,20 @@ namespace ForterroAnasIdrissiCodeChallenge
             productsListingDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
+        private void addProductButton_Click(object sender, EventArgs e)
+        {
+            var addForm = new AddEditForm(_productService);
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadProducts();
+            }
+        }
+
+        private void ProductSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var searchTerm = ProductSearchTextBox.Text.Trim();
+            var filteredProducts = _productService.SearchProductsByName(searchTerm).ToList();
+            _productsBindingSource.DataSource = filteredProducts;
+        }
     }
 }

@@ -24,6 +24,7 @@ namespace InventoryManagement.core.Services
         public void AddProduct(Product product)
         {
                 if (product == null) throw new ArgumentNullException(nameof(Product));
+            product.CreatedDate = DateTime.Now;
             _productRepository.Add(product);
         }
 
